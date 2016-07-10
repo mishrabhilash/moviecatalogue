@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/filter_text_popularity"
+        android:id="@+id/popularity"/>
+    <item android:title="@string/filter_text_votes"
+        android:id="@+id/votes"/>
+</menu>
