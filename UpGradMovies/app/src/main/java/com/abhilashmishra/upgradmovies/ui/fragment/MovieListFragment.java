@@ -2,6 +2,7 @@ package com.abhilashmishra.upgradmovies.ui.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.PopupMenu;
@@ -204,5 +205,17 @@ public class MovieListFragment extends Fragment implements View.OnClickListener 
             }
         }
     };
+
+    public void noInternetAvailable(){
+        final Snackbar snackbar = Snackbar.make(rootView,"No Internet available",Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction("Retry", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                snackbar.dismiss();
+                fragmentController.refreshMovieList();
+            }
+        });
+        snackbar.show();
+    }
 
 }

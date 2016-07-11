@@ -64,7 +64,7 @@ public class MovieListFragmentController {
     }
 
     private void noInternetAvailable(){
-
+        fragment.noInternetAvailable();
     }
 
     private void InternetAvailable(){
@@ -87,7 +87,7 @@ public class MovieListFragmentController {
         }
     }
 
-    private void refreshMovieList(){
+    public void refreshMovieList(){
         getMoviesFromDB(1);
     }
 
@@ -126,6 +126,7 @@ public class MovieListFragmentController {
                     loading = false;
                     hideLoader();
                     enableControls();
+                    noInternetAvailable();
                 }
             });
         }
